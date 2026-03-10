@@ -1,3 +1,14 @@
 
 booking:
   message: "Bokking Service configuration from Git repository"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
