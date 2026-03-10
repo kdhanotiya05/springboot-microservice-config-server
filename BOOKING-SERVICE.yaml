@@ -1,7 +1,11 @@
 
 booking:
   message: "Bokking Service configuration from Git repository"
-
+  
+spring:
+  application:
+    name: BOOKING-SERVICE
+    
 eureka:
   client:
     service-url:
