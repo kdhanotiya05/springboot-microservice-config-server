@@ -1,0 +1,92 @@
+order -invertory-payment
+
+
+curl -X 'POST'
+  'http://localhost:8085/restorent/create'
+ -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "restorentName": "suhag",
+  "place": "pune",
+  "details": "good"
+}'
+order.created
+
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+stop- .\bin\windows\zookeeper-server-stop.bat  
+stop - .\bin\windows\kafka-server-stop.bat
+
+kafka-storage.bat format -t fkCS3ArxSAeJe8PK44XJlg -c C:\kafka\config\kraft\server.properties
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+kafka-server-start.bat C:\kafka\config\kraft\server.properties
+
+
+'wmic' is not recognized as an internal or external command,
+operable program or batch file.
+
+bin\windows\kafka-storage.bat random-uuid
+
+5HDeh0omRxegucin414XNg
+
+bin\windows\kafka-storage.bat format -t 5HDeh0omRxegucin414XNg -c config\kraft\server.properties
+
+
+kafka-topics.bat --create --topic mytopic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+
+bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+kaf\ka-topics.bat --describe --bootstrap-server localhost:9092
+
+kafka-topics.bat --describe --topic mytopic --bootstrap-server localhost:9092
+
+
+create prudocer
+
+kafka-console-producer.bat --topic BookTicket --bootstrap-server localhost:9092
+
+
+create consumer 
+kafka-console-consumer.bat --topic mytopic --bootstrap-server localhost:9092
+kafka-console-consumer.bat --topic mytopic --bootstrap-server localhost:9092 --from-beginning
+
+check the consumer group
+kafka-consumer-groups.bat --list --bootstrap-server localhost:9092
+kafka-consumer-groups.bat --describe --group console-consumer-54039 --bootstrap-server localhost:9092
+
+check the offsets
+kafka-topics.bat --list --bootstrap-server localhost:9092  ---> defualt is created
+
+Create Consumner group 
+kafka-console-consumer.bat --topic mytopic --group myfirstgroup --bootstrap-server localhost:9092
+kafka-consumer-groups.bat --list --bootstrap-server localhost:9092
+
+
+kafka-console-consumer.bat --topic inventory-events --bootstrap-server localhost:9092 --from-beginning
+
+kafka-console-consumer.bat --topic order-events --bootstrap-server localhost:9092 --from-beginning
+
+kafka-console-consumer.bat --topic payment-events --bootstrap-server localhost:9092 --from-beginning
+
+
+saga distributed example of kafka springboot with database
+
+select * from order_table
+select * from inventory
+select * from payment
+select * from bank_act
+
+drop table order_table
+	
+	
+	
+	
+.\bin\windows\kafka-server-stop.bat
+.\bin\windows\zookeeper-server-stop.ba
+
+	
